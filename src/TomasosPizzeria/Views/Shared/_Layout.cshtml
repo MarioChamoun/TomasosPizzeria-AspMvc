@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Http
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Tomasos</title>
+    <link rel="stylesheet" type="text/css" href="~/css/Main.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="~/Home">Home</a></li>
+            <li><a href="~/Meny/Index">Meny</a></li>
+            <li><a href="~/Meny/Korg">Korg</a></li>
+        </ul>
+        <ul class="right">
+            @if (Context.Session.Get("UserID") != null)
+            {
+                <label class="labelwelcome">@Context.Session.GetString("Username"),</label>
+                <li><a href="~/UserAccount/UpdateProfile">Profil</a></li>
+                <li><a href="~/UserAccount/logout">Logga ut</a></li>
+
+            }
+            else
+            {
+                <li><a href="~/UserAccount/login">Logga in</a></li>
+                <li><a href="~/UserAccount/register">Registrera</a></li>
+            }
+        </ul>
+    </div>
+    <div id="mainbody">
+        <div id="bodycontent">
+            @RenderBody()
+
+        </div>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

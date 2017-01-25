@@ -1,0 +1,39 @@
+﻿@model TomasosPizzeria.Models.Kund
+
+@{
+    ViewData["Title"] = "login";
+}
+
+<h2>login</h2>
+
+<form asp-action="login">
+    <div class="form-horizontal">
+        <h4>Kund</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Användarnamn</label>
+            <div class="col-md-10">
+                <input asp-for="AnvandarNamn" class="form-control" />
+                <span asp-validation-for="AnvandarNamn" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Losenord" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Losenord" type="password" class="form-control" />
+                <span asp-validation-for="Losenord" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

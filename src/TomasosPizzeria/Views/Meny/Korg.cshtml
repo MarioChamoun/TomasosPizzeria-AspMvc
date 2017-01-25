@@ -1,0 +1,35 @@
+﻿@model IEnumerable<TomasosPizzeria.Models.Korg>
+@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Korg";
+}
+
+<h2>Korg</h2>
+@if (Context.Session.Get("UserID") != null)
+{
+
+        var total = 0;
+
+    <h2>Du har följande i korgen:</h2>
+    <br />
+        @if (Model != null)
+        {
+            <div class="korg">
+                @foreach (var item in Model)
+                {
+                    total = total + item.Pris.Value;
+                    <label class="korglabel">@item.Matrattnamn</label> <br />
+                    <label class="korglabel">@item.Pris kr</label> <br />
+                }
+            </div>
+            if (total == 0) { }
+            else
+            {
+            <label>Totalt: </label>
+            <label class="korglabel">@total kr</label><br />
+            @Html.ActionLink("Beställ", "bestall", "Meny", new {totalbelopp = total }, null) @Html.ActionLink("Ta bort", "tabortkorg", "Meny", new { }, null)
+                }
+            }
+            else { }
+        }

@@ -1,0 +1,114 @@
+﻿body{
+	background-image:url("../images/background.jpg");
+}
+
+.navbar{
+	border-radius: 20px;
+	margin-top: 60px;
+	width: 900px;
+	margin-left: 23%;
+	background-color: rgba(104, 18, 12, 0.92);
+	
+}
+ul {
+    display: inline-block;
+}
+.korglabel{
+    color:white;
+    margin-left:5px;
+    
+}
+.korg{
+	border:1px solid black;
+	border-radius:10px;
+	width:200px;
+	margin-bottom:5px;
+}
+.labelwelcome{
+    margin-left:100px;
+}
+.success{
+    color:white;
+    font-style:oblique;
+}
+.text-danger{
+    color:white;
+    font-style:italic;
+}
+li {
+    display: inline;
+
+}
+
+a {
+  color: lightgoldenrodyellow;
+  padding: 14px 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+a:hover{
+	color: white;
+}
+.right{
+	margin-left: 20%;		
+}
+#mainbody{
+	background-color:rgba(103, 57, 57, 0.42);
+	margin-top: 1px;
+	margin-left: 22%;
+	width: 900px;
+	height: 800px;
+	border: 1px solid black;
+	border-radius: 20px;
+}
+#bodycontent{
+    margin-left:10px;
+}
+h1,h2,h4,label{
+	color:white;
+}
+.text-danger{
+	color:darkred;
+}
+.pizzor{
+    border:1px solid black;
+    border-radius:15px;
+    width: 770px;
+    background-color:rgba(101, 101, 101, 0.45);
+}
+.pizzor .namn{
+    font-style:normal;
+    font-size:20px;
+    margin-left:5px;
+
+}
+.pizzor .beskrivning{
+    margin-left:5px;
+    font-style:oblique;
+    font-size:15px;
+}
+.headclass{
+    font-style:italic;
+    margin-left:10px;
+}
+#shop{
+   margin-left:20px;
+}
+.pizzor .pris{
+    font-style:oblique;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.imgpizza{
+    border-radius:10px;
+}
+.italicfont{
+    font-style:italic;
+    color:white;
+}
+.btn-link{
+    color:blue;
+}
+.btn-link:hover{
+    color:black;
+}

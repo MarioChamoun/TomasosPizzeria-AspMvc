@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TomasosPizzeria.Models.Matratt>
+
+@{
+    ViewData["Title"] = "Meny";
+}
+<h2 class="headclass">Meny</h2>
+<div class="pizzor">
+    <h2 class="headclass">Pizzor</h2>
+    @foreach (var item in Model)
+    {
+        if (item.MatrattTyp == 1)
+        {
+            <label class="namn">@item.MatrattNamn</label>@Html.ActionLink("Lägg till korg", "addkorg", "Meny", new { matnamn = @item.MatrattNamn, pris = @item.Pris,matid = @item.MatrattId }, null)<br />
+            <label class="beskrivning">@item.Beskrivning</label>
+            <label class="pris">@item.Pris kr</label>
+            <br />
+        }
+    }
+    <h2 class="headclass">Pasta</h2>
+    @foreach (var item in Model)
+    {
+        if (item.MatrattTyp == 2)
+        {
+            <label class="namn">@item.MatrattNamn</label>@Html.ActionLink("Lägg till korg", "addkorg", "Meny", new { matnamn = @item.MatrattNamn, pris = @item.Pris,matid = @item.MatrattId }, null)<br />
+            <label class="beskrivning">@item.Beskrivning</label>
+            <label class="pris">@item.Pris kr</label>
+            <br />
+        }
+    }
+    <h2 class="headclass">Sallader</h2>
+    @foreach (var item in Model)
+    {
+        if (item.MatrattTyp == 3)
+        {
+            <label class="namn">@item.MatrattNamn</label>@Html.ActionLink("Lägg till korg", "addkorg", "Meny", new { matnamn = @item.MatrattNamn, pris = @item.Pris,matid = @item.MatrattId }, null)<br />
+            <label class="beskrivning">@item.Beskrivning</label>
+            <label class="pris">@item.Pris kr</label>
+            <br />
+        }
+    }
+</div>
